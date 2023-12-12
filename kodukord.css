@@ -1,0 +1,313 @@
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 20px 0;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* Content Container Styles */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 80px auto 20px; /* Adjust top margin to account for fixed navbar */
+    padding: 0 20px;
+}
+
+.main-content {
+    flex: 3;
+    margin-right: 20px;
+}
+
+/* House Rules Section Styles */
+#house-rules h2,
+#pricing h2 {
+    margin-bottom: 10px;
+}
+
+#house-rules ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#house-rules ul li::before {
+    content: "\2022";
+    color: red;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+#house-rules .read-more {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Pricing Section Styles */
+#pricing {
+    margin-top: 20px;
+}
+
+/* Booking Section Styles */
+.booking-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Booking Form Styles */
+.booking-form label,
+.booking-form input[type="date"],
+.booking-form select,
+.booking-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.booking-form input[type="date"],
+.booking-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.booking-form button {
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #fff;
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 40px 20px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    border-top: 1px solid #ccc;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #333;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 0.8em;
+}
+
+/* Social Media Icons */
+.footer .social-media a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer .social-media a:last-child {
+    margin-right: 0;
+}
+
+/* Divider Style */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 20px;
+    }
+
+    .content-container {
+        flex-direction: column;
+    }
+
+    .main-content,
+    .booking-section {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    #house-rules ul li::before {
+        margin-left: 0;
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    /* Set other styles like width, height, etc., as needed */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    transition: 0.5s ease;
+    opacity: 0;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Center the button horizontally */
+    height: 40px; /* Set the height of the overlay */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.broneeri-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Spacing between letters */
+    transition: background-color 0.3s ease;
+    border-radius: 2px; /* Slight rounding on button corners */
+    cursor: pointer;
+}
+
+.broneeri-btn:hover {
+    background-color: #0056b3; /* Darken button on hover */
+}
+
+/* Ensure the gallery grid is as desired */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns as an example */
+    gap: 15px;
+    /* Other styling as needed */
+}

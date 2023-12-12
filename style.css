@@ -57,6 +57,7 @@ a {
 .hero {
   background-image: url('assets/IMG_1840.jpg'); /* Replace with your actual hero image path */
   background-size: cover;
+  opacity:0.8;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
@@ -64,42 +65,48 @@ a {
   margin-bottom: 50px; /* Space between hero and the next section */
 }
 
-/* Hero content styling */
+/* Center the hero content */
 .hero-content {
   position: absolute;
-  bottom: 40px; /* Adjust the value as needed to move content from the bottom */
-  left: 40px; /* Adjust the value as needed to move content from the left */
+  margin-bottom: 50px;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the content both vertically and horizontally */
   color: white;
-  text-align: left; /* Align text to the left */
-  max-width: 900px; /* Adjust the width as necessary */
+  text-align: center;
+  max-width: 900px;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem; /* Adjust size as needed */
-  margin-bottom: 0.5rem; /* Space between the heading and paragraph */
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-content p {
-  font-size: 1rem; /* Adjust size as needed */
-  margin-bottom: 1.5rem; /* Space between the paragraph and the link */
+  font-size: 1rem;
+  margin-top: 50px;
+  margin-bottom: 1.5rem;
 }
 
 /* CTA link styling */
 .hero-content .cta {
   font-size: 1rem;
+  margin-top:30px;
+  margin-bottom:30px;
   padding: 10px 20px;
-  background-color: #000; /* Button background */
-  color: #fff; /* Button text color */
-  text-decoration: none; /* Remove underline from link */
-  border: none; /* Remove border */
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border: none;
   cursor: pointer;
-  display: inline-block; /* Make the link behave like a button */
+  display: inline-block;
 }
 
 /* Adjust CTA link appearance on hover */
 .hero-content .cta:hover {
-  background-color: #333; /* Darken button on hover */
+  background-color: #333;
 }
+
 
 
 /* House Section Styling */
@@ -112,6 +119,16 @@ a {
   height: 500px; /* Adjust as needed to fit the house image */
 }
 
+.house-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* Adjust the transparency level */
+  z-index: -1;
+}
 /* House Content Styling */
 .house-content {
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
@@ -209,6 +226,17 @@ a {
     margin-bottom: 50px; /* Space between hero and house section */
   }
   
+  .amenities::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* Adjust the transparency level */
+    z-index: -1;
+}
+
   .container {
     display: flex;
     justify-content: space-evenly;
@@ -273,7 +301,17 @@ a {
     background-position: center;
     padding: 20px;
   }
-  
+  .details::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* Adjust the transparency level */
+    z-index: -1;
+}
+
   .header-container {
     background-color: #fff0f0;
     color: #333;
@@ -397,6 +435,17 @@ h2, p {
     align-items: center;
   }
   
+  .subscription-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* Adjust the transparency level */
+    z-index: -1;
+}
+
   .subscription-box {
     background: rgba(255, 255, 255, 0.9);
     padding: 2em;
