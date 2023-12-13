@@ -15,40 +15,32 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    width: 100%;
-    background-color: #fff;
-    padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    align-items: center;
-    padding-left: 0;
-}
-
-.nav-links li {
-    padding: 0 15px;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #333;
-    display: block;
-    padding: 20px 0;
+    padding: 0 10px;
 }
 
 .nav-links li a:hover {
@@ -56,31 +48,54 @@ body {
 }
 
 /* Gallery Styles */
+.gallery-container {
+    max-width: 600px; /* Adjust this to control the width of the gallery */
+    margin: 20px auto; /* Centers the gallery and adds spacing above and below */
+    overflow: hidden;
+    position: relative;
+}
+
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 80px 20px 20px;
-    margin: 0 auto;
-    max-width: 1200px;
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform; /* Optimize for animations */
 }
 
 .gallery-item {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    position: relative;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    cursor: pointer; /* Indicates the item is interactive */
+    flex: 0 0 100%; /* Each item takes full width of the container */
 }
 
-/* Hover Effect for the whole gallery item */
-.gallery-item:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+.gallery-item img {
+    width: 85%;
+    max-height: 500px; /* Adjust height as needed */
+    object-fit: cover; /* Adjust or remove if you want to keep images' aspect ratio */
+    display: block; /* Remove extra space below the image */
+}
+
+/* Arrow Styles */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    z-index: 100;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+/* Add a hover effect for arrows */
+.gallery-nav:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Button Styles */
@@ -102,73 +117,73 @@ body {
 }
 
 /* Footer Styles */
-.footer-container {
+.footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center; /* Center text for all content */
+  }
+  
+  .footer .footer-content {
     display: flex;
-    justify-content: space-between;
-    max-width: 1024px;
-    margin: 40px auto 0;
-    padding-bottom: 20px;
-}
-
-.footer-column {
-    flex: 1;
-    padding: 0 15px;
-}
-
-.footer-column h3 {
-    margin-bottom: 20px;
-}
-
-.footer-column p,
-.footer-column a {
-    color: #333;
-    margin-bottom: 10px;
-    text-decoration: none;
-}
-
-.footer-column a:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
+    flex-direction: row; /* Align items in a row */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    max-width: 1200px; /* Adjust as necessary */
+    margin: 0 auto; /* Center the flex container */
+  }
+  
+  .footer .footer-section {
+    flex: 1; /* Allow each section to take equal width */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .footer .footer-section h3 {
+    margin-bottom: 15px;
+  }
+  
+  .footer .footer-bottom {
     padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 0.8em;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .navbar {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contact-section {
         flex-direction: column;
     }
-
-    .nav-links {
+  
+    .contact-info, .contact-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+  
+    .navbar .nav-links {
+        flex-direction: column;
         margin-top: 20px;
     }
-
-    .content-container,
-    .footer-container {
-        flex-direction: column;
+  
+    .navbar .nav-links li {
+        margin-bottom: 10px;
     }
-
-    .main-content,
-    .booking-section {
-        width: 100%;
-        margin-right: 0;
+  
+    .footer .footer-content {
+        flex-direction: column; /* Stack footer sections vertically on smaller screens */
+        align-items: center;
     }
-
-    .nav-links li {
-        padding: 10px 0;
+  
+    .footer .footer-section {
+        margin-bottom: 20px; /* Add space between stacked sections */
     }
-
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
+  
+    .footer .footer-bottom {
+        margin-top: 20px;
     }
-
-    .footer-bottom {
-        text-align: center;
-    }
-}
+  }
+    

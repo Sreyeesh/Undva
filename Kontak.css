@@ -12,41 +12,89 @@ body, html {
     color: #333;
 }
 
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    padding-top: 80px; /* Space for fixed navbar, adjust if navbar height changes */
+}
+
 /* Navbar Styles */
 .navbar {
-    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.navbar .logo {
-    font-size: 2rem;
+.logo {
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
 }
 
-.navbar .nav-links {
-    list-style-type: none;
+.nav-links {
+    list-style: none;
     display: flex;
 }
 
-.navbar .nav-links li a {
+.nav-links li a {
     text-decoration: none;
     color: #333;
-    padding: 10px;
-    transition: color 0.3s ease;
+    padding: 0 10px;
 }
 
-.navbar .nav-links li a:hover, .navbar .nav-links li a.active {
+.nav-links li a:hover {
     color: #007bff;
 }
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none; /* Hide nav links on smaller screens */
+        position: absolute;
+        background-color: white;
+        top: 80px; /* Adjust based on your navbar height */
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .navbar .nav-links.active {
+        display: flex; /* Show nav links when active (hamburger menu tapped) */
+    }
+
+    .navbar .hamburger {
+        display: block; /* Show hamburger icon on smaller screens */
+        cursor: pointer;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem; /* Adjust logo size as necessary */
+    }
+}
+
 
 /* Contact Section Styles */
 .contact-section {

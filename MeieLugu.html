@@ -3,62 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stay Zen House - Meie Lugu</title>
+    <title>Undva Lugu</title>
     <link rel="stylesheet" href="MeieLugu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Add your custom CSS here */
+    </style>
 </head>
 <body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/Logo (1).png" alt="Logo" style="width: 150px; height: 150px;">
+        </div>
+        <nav class="navbar">
+            <!-- Insert your logo and navigation bar items -->
+            <div class="logo">
+                <img src="assets/Logo (1).png" alt="Logo" style="width: 150px; height: 150px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Undva Ökomaja</a></li>
+                <li><a href="MeieLugu.html">Meie Lugu</a></li>
+                <li><a href="paketd.html">Paketd</a></li>
+                <li><a href="broneeri.html">Broneeri</a></li>
+                <li><a href="kinkekaardid.html">Kinkekaardid</a></li>
+                <li><a href="Gallery.html">Galerii</a></li>
+                <li><a href="Kontak.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="utilities">
+            <div class="weather">
+                <i class="fas fa-cloud-sun"></i> -5°C
+            </div>
+            <a href="#cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <button class="translate" onclick="translateToEnglish()">ET / ENG</button>
+        </div>
+    </header>
+    <!-- Add spacing here -->
+     <!-- Image Section -->
+     <header class="hero-section">
+        <img src="assets/IMG_1607.jpg" alt="Hero Image" class="hero-image">
+        <div class="hero-text">
+            <h1>Meie Lugu</h1>
+            
+        </div>
+    </header>
+        <div class="story-content">
+            <blockquote>
+                
+            </blockquote>
+            <p>
+                Saaremaal asuv Undva küla on tuntud oma rahuliku ja looduskauni õhkkonna poolest, mis on täiuslik koht nende jaoks, kes tahavad põgeneda linnakärast ja leida rahu ning vaikust. Undva Ökomaja pakub ainulaadset võimalust puhata elektrivabalt keset männi- ja kadakametsa, pakkudes külastajatele võimalust ühilduda loodusega, selle ilu ja vaikusega.
 
-<nav class="navbar">
-    <div class="logo">ZEN</div>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="broneeri.html">Broneeri</a></li>
-        <li><a href="paketd.html">Paketd</a></li>
-        <li><a href="Kinkekaardid.html">Kinkekaardid</a></li>
-        <li><a href="Gallery.html">GALERII</a></li>
-        <li><a href ="MeieLugu.html">MeieLugu</a></li>
-        <li><a href="Kontak.html">KONTAKT</a></li>
-    </ul>
-</nav>
+Eesmärgiks on pakkuda külastajatele võimalust põgeneda igapäeva stressist ja nautida Saaremaa looduse ilu elektrivabas majutuses, kus külalised saaksid täielikult lõõgastuda ja nautida looduskeskkonda, kus männid koos kadakatega loovad rahustava ja meeldiva õhkkonna.
 
-<div class="story-section">
-    <img src="https://via.placeholder.com/1600x500" alt="Our Story" class="story-hero">
-    <h1>Meie lugu</h1>
-    <div class="story-content">
-        <blockquote>
-            “Stay Zen” maja idee
-        </blockquote>
-        <p>
-            Stay Zen majakeste idee sündis kriisiolukorra ajal, kus inimesed olid sunnitud olema kodus, vähendama omavahelist kontakti ja piirama oma liikumisi. See kõik tekitas stressi - reisida ei saa, spaad, jõusaalid ja restoranid on teadmata ajaks suletud.
-        </p>
-        <!-- Continue with the rest of the story content -->
+            </p>
+            <!-- Continue with the rest of the story content -->
+        </div>
     </div>
-</div>
+    
+    
 
+<!-- Footer -->
 <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>Võta meiega ühendust!</h3>
-            <p><i class="fas fa-map-marker-alt"></i> 123 Zen Street, Peaceful City</p>
-            <p><i class="fas fa-phone"></i> +123 456 7890</p>
-            <p><i class="fas fa-envelope"></i> contact@zenhouse.com</p>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Meist</h3>
+            <p>“ Ainulaadne elektrivaba majutus Saaremaa looduses. 
+                Koht, kus saab end ümbritsevast maailmast täielikult välja lülitada. “</p>
         </div>
-        <div class="footer-column">
-            <h3>Follow Us</h3>
-            <p><i class="fab fa-facebook-f"></i> Facebook</p>
-            <p><i class="fab fa-instagram"></i> Instagram</p>
-            <!-- Additional social links -->
+        <div class="footer-section">
+            <h3>Kontakt </h3>
+            <p><i class="fas fa-map-marker-alt"></i>  Undva küla, Saaremaa vald, Saaremaa, Estonia</p>
+            <p><i class="fas fa-phone"></i> +372  513 3372</p>
+            <p><i class="fas fa-envelope"></i> info@undvaokomaja.ee</p>
         </div>
-        <div class="footer-column">
-            <h3>Quick Links</h3>
-            <!-- Quick links or navigation -->
+        <div class="footer-section">
+            <h3>Jälgi meid</h3>
+            <a href="https://www.facebook.com/profile.php/?id=61554465003590&name=xhp_nt__fb__action__open_user" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/undvaokomaja/?hl=en" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2023 Stay Zen House. All rights reserved.
+        <p>&copy; 2023 Undva Ökomaja. All rights reserved.</p>
     </div>
 </footer>
-
 </body>
 </html>
