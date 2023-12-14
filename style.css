@@ -213,69 +213,76 @@ a {
   
 /* ... existing styles ... */
 
+/* Amenities Section Styling */
 .amenities {
-    background-image: url('assets/IMG_1794.jpg'); /* Replace with the actual image path */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
-    height: 100vh; /* Full viewport height for hero */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 60px; /* Adjust if your navbar height is different */
-    margin-bottom: 50px; /* Space between hero and house section */
-  }
-  
-  .amenities::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.5); /* Adjust the transparency level */
-    z-index: -1;
+  background-image: url('assets/IMG_1794.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  margin-bottom: 50px;
 }
 
+.amenities::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7); /* Increase the last number to decrease transparency */
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Wrap elements when not enough space */
+  width: 80%; /* Adjust width as necessary, consider max-width for larger screens */
+  max-width: 1200px; /* Prevents the container from becoming too wide on large screens */
+  margin: auto; /* Center the container */
+  padding: 1em; /* Padding inside the container */
+  background: rgba(255, 255, 255, 0.95); /* Less transparent white background */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow for depth */
+  border-radius: 8px; /* Optional: Rounds the corners of the container */
+}
+
+.amenity {
+  flex: 1; /* Allow flexible distribution of space */
+  min-width: 150px; /* Minimum width of each amenity */
+  margin: 1em; /* Margin around each amenity */
+  text-align: center; /* Center the content */
+  margin: 10px; /* Adjust margin to ensure spacing between items */
+}
+
+.amenity i {
+  font-size: 24px;
+  margin-bottom: 0.5em;
+}
+
+.amenity span {
+  display: block; /* Ensure the span takes the full width */
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 50%; /* You may adjust the width as necessary */
-    height: 50%;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the icons and text */
-    padding: 10px; /* Padding inside the container */
-  }
-  
-  .amenity {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .amenity i {
-    font-size: 24px; /* Icon size */
-    margin-bottom: 10px; /* Space between icon and text */
-    display: block; /* Ensure the icon is on a new line */
-  }
-  
-  .amenity span {
-    font-size: 14px; /* Text size */
-    text-align: center;
-  }
-  
-  /* Add media queries for responsiveness if needed */
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-    .split-screen-container {
-      display: flex;
-    }
+      width: 95%;
   }
 
+  .amenity {
+      min-width: 100px; /* Smaller minimum width on smaller screens */
+  }
+}
 
   .content-section {
     display: flex;
