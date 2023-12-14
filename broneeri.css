@@ -46,13 +46,12 @@ body {
     color: #007bff;
 }
 
-
 /* Content Container Styles */
 .content-container {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 80px auto 20px; /* Adjust top margin to account for fixed navbar */
+    margin: 80px auto 20px;
     padding: 0 20px;
 }
 
@@ -67,32 +66,25 @@ body {
     margin-bottom: 10px;
 }
 
-#house-rules ul {
-    list-style: none;
+#house-rules ul,
+#pricing ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#house-rules ul li,
+#pricing ul li {
+    margin-left: -20px;
+}
+
+/* Remove bullet points for specific sections 'Meile lähedal' and 'Mida pakume' */
+.main-content h2 + ul {
+    list-style-type: none;
     padding-left: 0;
 }
 
-#house-rules ul li::before {
-    content: "\2022"; /* Add a bullet character (•) */
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-    
-}
-
-
-#house-rules .read-more {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/* Pricing Section Styles */
-#pricing {
-    margin-top: 20px;
+.main-content h2 + ul li {
+    padding-left: 1.5em;
 }
 
 /* Booking Section Styles */
@@ -131,16 +123,6 @@ body {
     cursor: pointer;
 }
 
-/* Social Media Icons */
-.footer .social-media a {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.footer .social-media a:last-child {
-    margin-right: 0;
-}
-
 /* Divider Style */
 hr {
     border: 0;
@@ -158,6 +140,11 @@ hr {
 
     .nav-links {
         margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
     }
 
     .content-container {
@@ -170,88 +157,23 @@ hr {
         margin-right: 0;
     }
 
-    .nav-links li {
-        padding: 10px 0;
-    }
-
-    #house-rules ul li::before {
-        margin-left: 0;
-    }
-
     .footer {
         position: relative;
         margin-top: 20px;
     }
 
-    .footer-container {
+    .footer .footer-content {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
-    .footer-column {
-        width: 100%;
+    .footer .footer-section {
         margin-bottom: 20px;
     }
 
-    .footer-bottom {
+    .footer .footer-bottom {
         text-align: center;
     }
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    /* Set other styles like width, height, etc., as needed */
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    transition: 0.5s ease;
-    opacity: 0;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display: flex; /* Center the button horizontally */
-    height: 40px; /* Set the height of the overlay */
-}
-
-.gallery-item:hover .overlay {
-    opacity: 1;
-}
-
-.broneeri-btn {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 1px; /* Spacing between letters */
-    transition: background-color 0.3s ease;
-    border-radius: 2px; /* Slight rounding on button corners */
-    cursor: pointer;
-}
-
-.broneeri-btn:hover {
-    background-color: #0056b3; /* Darken button on hover */
-}
-
-/* Ensure the gallery grid is as desired */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns as an example */
-    gap: 15px;
-    /* Other styling as needed */
 }
 
 /* Footer Styles */
@@ -262,23 +184,23 @@ hr {
   position: relative;
   bottom: 0;
   width: 100%;
-  text-align: center; /* Center text for all content */
+  text-align: center;
 }
 
 .footer .footer-content {
   display: flex;
-  flex-direction: row; /* Align items in a row */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  flex-wrap: wrap; /* Wrap items on smaller screens */
-  max-width: 1200px; /* Adjust as necessary */
-  margin: 0 auto; /* Center the flex container */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer .footer-section {
-  flex: 1; /* Allow each section to take equal width */
+  flex: 1;
   padding: 10px;
-  box-sizing: border-box; /* Include padding in width calculation */
+  box-sizing: border-box;
 }
 
 .footer .footer-section h3 {
@@ -291,40 +213,6 @@ hr {
   margin-top: 20px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .contact-section {
-      flex-direction: column;
-  }
-
-  .contact-info, .contact-form {
-      width: 100%;
-      margin-bottom: 20px;
-  }
-
-  .navbar .nav-links {
-      flex-direction: column;
-      margin-top: 20px;
-  }
-
-  .navbar .nav-links li {
-      margin-bottom: 10px;
-  }
-
-  .footer .footer-content {
-      flex-direction: column; /* Stack footer sections vertically on smaller screens */
-      align-items: center;
-  }
-
-  .footer .footer-section {
-      margin-bottom: 20px; /* Add space between stacked sections */
-  }
-
-  .footer .footer-bottom {
-      margin-top: 20px;
-  }
-}
-  
 /* CSS for the Hero Section */
 .hero-section {
     position: relative;
@@ -332,12 +220,12 @@ hr {
 }
 
 .hero-image {
-    width: 100%; /* the image will take up the full width of its container */
-    max-height: 500px; /* sets a maximum height */
-    height: auto; /* maintains the aspect ratio */
-    object-fit: cover; /* covers the area, may crop some parts of the image */
-    display: block; /* removes extra space below the image */
-    margin: 0 auto; /* centers the image horizontally */
+    width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 .hero-text {
@@ -345,14 +233,7 @@ hr {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: rgba(0, 0, 0, 0.5); Add a semi-transparent background */
     padding: 20px;
-    color: #fff; /* Text color */
-    border-radius: 5px; /* Rounded corners for the text box */
-}
-
-.hero-text h1 {
-    font-size: 36px;
-    margin: 0;
-    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
 }

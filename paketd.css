@@ -122,6 +122,7 @@ body {
     justify-content: center;
 }
 
+
 .package {
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -141,12 +142,24 @@ body {
     margin-bottom: 10px;
 }
 
+
 .package p {
     color: #666;
     font-size: 14px;
     text-align: left;
+    margin-bottom: 10px; /* Space between paragraphs */
+    padding-left: 30px; /* Space for checkmark */
+    position: relative; /* For absolute positioning of the checkmark */
 }
 
+.package p::before {
+    content: '✔'; /* Checkmark */
+    color: green; /* Checkmark color */
+    position: absolute;
+    left: 0; /* Position the checkmark inside the padding area */
+    font-size: 16px; /* Size of the checkmark */
+    line-height: 18px; /* Align vertically with the text */
+}
 .hero-image {
     width: 100%; /* the image will take up the full width of its container */
     max-height: 500px; /* sets a maximum height */
